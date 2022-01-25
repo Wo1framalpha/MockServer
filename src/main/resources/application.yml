@@ -1,0 +1,15 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    url: jdbc:sqlite:/Users/bob/IdeaProjects/MockServer/src/main/resources/db/mockdata.db
+    username:
+    password:
+    driver-class-name: org.sqlite.JDBC
+    type: org.sqlite.SQLiteDataSource
+  jpa:
+    properties:
+      database: mysql
+      show-sql: true
+      database-platform: com.springboot.sqlite.SQLDialect
