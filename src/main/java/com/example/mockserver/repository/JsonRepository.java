@@ -1,6 +1,6 @@
 package com.example.mockserver.repository;
 
-import com.example.mockserver.dao.Json;
+import com.example.mockserver.entity.Json;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;

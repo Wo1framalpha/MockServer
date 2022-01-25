@@ -3,7 +3,7 @@ server:
 
 spring:
   datasource:
-    url: jdbc:sqlite:/Users/bob/IdeaProjects/MockServer/src/main/resources/db/mockdata.db
+    url: jdbc:sqlite::resource:db/mockdata.db
     username:
     password:
     driver-class-name: org.sqlite.JDBC

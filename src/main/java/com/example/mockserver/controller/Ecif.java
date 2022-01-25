@@ -19,7 +19,7 @@ public class Ecif {
         ObjectMapper objectMapper = new ObjectMapper();
         try {
             SendAccInfomationQryReq req = objectMapper.readValue(json, SendAccInfomationQryReq.class);
-            return query.getJson(req.getHeadTrCode);
+            // return query.getJson(req.getHeadTrCode);
         } catch (JsonProcessingException e) {
             e.printStackTrace();
         }
