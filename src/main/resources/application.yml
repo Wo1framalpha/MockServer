@@ -3,13 +3,17 @@ server:
 
 spring:
   datasource:
-    url: jdbc:sqlite::resource:db/mockdata.db
+    url: jdbc:sqlite:src/main/resources/db/mockdata.db
     username:
     password:
     driver-class-name: org.sqlite.JDBC
     type: org.sqlite.SQLiteDataSource
   jpa:
-    properties:
-      database: mysql
-      show-sql: true
-      database-platform: com.springboot.sqlite.SQLDialect
+    hibernate:
+      ddl-auto: update
+
+    show-sql: true
+    database-platform: org.sqlite.hibernate.dialect.SQLiteDialect
+  thymeleaf:
+    mode: development
+    cache: false

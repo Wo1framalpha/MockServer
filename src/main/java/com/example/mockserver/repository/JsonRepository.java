@@ -7,6 +7,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface JsonRepository extends CrudRepository<Json, Integer> {
-    @Query(value = "SELECT id, headTrCode, json FROM code_json WHERE headTrCode = ?1", nativeQuery = true)
-    Json findByHeadTrCode(String headTrCode);
+
+    Json findByCode(String code);
 }
