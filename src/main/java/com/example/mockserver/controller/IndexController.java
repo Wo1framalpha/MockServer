@@ -1,35 +1,44 @@
 package com.example.mockserver.controller;
 
-import com.example.mockserver.entity.Json;
+import com.example.mockserver.entity.DataEntity;
+import com.example.mockserver.service.DataQueryService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import java.util.List;
 
 @Controller
 public class IndexController {
-    @RequestMapping("/")
+    @Autowired
+    DataQueryService service;
+
+    @RequestMapping("/index")
     public String index(Model model) {
-        Json json = new Json();
-        json.setCode("03020101A0006");
-        json.setJson("{\n" +
-                "  \"hostCustNo\":" +
-                " \"123456789\",\n" +
-                "  \"acctNo\": \"123456789\",\n" +
-                "  \"currency\": \"CNY\",\n" +
-                "  \"acctName\": \"张三\",\n" +
-                "  \"openOrgNo\": \"123456789\",\n" +
-                "  \"openOrgName\": \"张三\",\n" +
-                "  \"openDate\": \"20170301\",\n" +
-                "  \"acctType\": \"1\",\n" +
-                "  \"acctStat\": \"1\",\n" +
-                "  \"acctClass\": \"1\",\n" +
-                "  \"cashFlag\": \"1\",\n" +
-                "  \"overFlag\": \"1\",\n" +
-                "  \"bankNo\": \"123456789\",\n" +
-                "  \"bankName\": \"中国银行\"\n" +
-                "  \n" +
-                "}");
-        model.addAttribute("json", json);
-        return "";
+        String code = "";
+        List<DataEntity> data = service.getData();
+        model.addAttribute("code", code);
+        model.addAttribute("data", data);
+        return "index";
+    }
+
+    @RequestMapping("/search")
+    public String search(String code, Model model){
+        List<DataEntity> data = service.getData(code);
+        model.addAttribute("data", data);
+        return "index";
+    }
+
+    @RequestMapping("/add")
+    public String add(@ModelAttribute DataEntity dataEntity, Model model){
+        if (dataEntity.getCode() != null && dataEntity.getCode().length() > 0) {
+            service.addData(dataEntity);
+            return "index";
+        } else {
+            model.addAttribute("dataEntity", new DataEntity());
+            return "add";
+        }
     }
 }

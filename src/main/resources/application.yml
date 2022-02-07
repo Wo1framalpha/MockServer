@@ -3,17 +3,20 @@ server:
 
 spring:
   datasource:
-    url: jdbc:sqlite:src/main/resources/db/mockdata.db
-    username:
-    password:
-    driver-class-name: org.sqlite.JDBC
-    type: org.sqlite.SQLiteDataSource
+    url: jdbc:h2:file:./src/main/resources/db/mockdatadb
+    username: admin
+    password: admin
+    driver-class-name: org.h2.Driver
   jpa:
     hibernate:
       ddl-auto: update
 
     show-sql: true
-    database-platform: org.sqlite.hibernate.dialect.SQLiteDialect
+    database-platform: org.hibernate.dialect.H2Dialect
+  h2:
+    console.enabled: true
+    console.path: /h2-console
+    console.settings.trace: false
+    console.settings.web-allow-others: false
   thymeleaf:
-    mode: development
     cache: false
