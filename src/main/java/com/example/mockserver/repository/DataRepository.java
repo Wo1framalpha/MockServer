@@ -10,4 +10,6 @@ import java.util.List;
 public interface DataRepository extends CrudRepository<DataEntity, Integer> {
 
     List<DataEntity> findByCode(String code);
+
+    void deleteByCode(String code);
 }

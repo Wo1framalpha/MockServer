@@ -71,7 +71,12 @@
                     <include>**/*.yml</include>
                     <include>**/*.properties</include>
                     <include>**/*.xml</include>
+                    <include>static/**/*.js</include>
+                    <include>static/**/*.css</include>
                 </includes>
+                <excludes>
+                    <exclude>**/rebel.xml</exclude>
+                </excludes>
                 <filtering>false</filtering>
 
             </resource>

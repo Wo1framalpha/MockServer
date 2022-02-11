@@ -22,11 +22,11 @@ public class EcifController {
     private ObjectMapper mapper;
 
     @RequestMapping(value = "/ecif", produces = "application/json;charset=UTF-8")
-    public String getEcif(@RequestBody String json) throws JsonProcessingException {
+    public byte[] getEcif(@RequestBody String json) throws JsonProcessingException {
         Map<String, Object> objectMap = JsonParseUtil.json2Map(json);
 
-        List<DataEntity> jsonObjects = queryService.getData((String) objectMap.get("headTrCode"));
+        String ret = queryService.getResponse((String) objectMap.get("headTrCode"));
 
-        return mapper.writeValueAsString(jsonObjects);
+        return mapper.writeValueAsBytes(ret);
     }
 }

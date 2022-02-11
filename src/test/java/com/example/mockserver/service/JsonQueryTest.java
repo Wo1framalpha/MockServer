@@ -48,8 +48,13 @@ class JsonQueryTest {
                 "  \"cashFlag\": \"1\",\n" +
                 "  \"overFlag\": \"1\",\n" +
                 "  \"bankNo\": \"123456789\",\n" +
-                "  \"bankName\": \"中国银行\"\n" +
-                "  \n" +
+                "  \"bankName\": \"中国银行\",\n" +
+                "  \"bookBal\": \"123456789\",\n" +
+                "  \"frzBal\": \"123456789\",\n" +
+                "  \"valBal\": \"123456789\",\n" +
+                "  \"overdraftLimit\": \"123456789\",\n" +
+                "  \"overdraft\": \"0\",\n" +
+                "  \"hostAcnoKind\": \"1\"\n" +
                 "}");
         repository.save(json);
         log.warn(json.toString());

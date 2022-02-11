@@ -2,14 +2,17 @@ package com.example.mockserver.controller;
 
 import com.example.mockserver.entity.DataEntity;
 import com.example.mockserver.service.DataQueryService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.List;
 
+@Slf4j
 @Controller
 public class IndexController {
     @Autowired
@@ -31,14 +34,11 @@ public class IndexController {
         return "index";
     }
 
-    @RequestMapping("/add")
-    public String add(@ModelAttribute DataEntity dataEntity, Model model){
-        if (dataEntity.getCode() != null && dataEntity.getCode().length() > 0) {
-            service.addData(dataEntity);
-            return "index";
-        } else {
-            model.addAttribute("dataEntity", new DataEntity());
-            return "add";
-        }
+    @RequestMapping("/page/add")
+    public String addPage(ModelMap modelMap){
+        DataEntity dataEntity = new DataEntity();
+        modelMap.put("dataEntity", dataEntity);
+
+        return "add";
     }
 }
