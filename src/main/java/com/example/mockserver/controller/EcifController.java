@@ -27,6 +27,6 @@ public class EcifController {
 
         String ret = queryService.getResponse((String) objectMap.get("headTrCode"));
 
-        return mapper.writeValueAsBytes(ret);
+        return ret.getBytes();
     }
 }

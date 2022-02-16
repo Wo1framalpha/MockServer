@@ -2,6 +2,10 @@ package com.example.mockserver.entity;
 
 // import com.cloudcore.ifp4.route.transport.rest.FormatMapping;
 
+import lombok.Data;
+import lombok.ToString;
+
+@Data
 public class AcHostDetailQryDto {
 	/**
 	 * 核心客户编号
@@ -83,128 +87,5 @@ public class AcHostDetailQryDto {
 	 * 	核心账户性质
 	 */
 	private String hostAcnoKind;
-	
-	public String getHostAcnoKind() {
-		return hostAcnoKind;
-	}
-	public void setHostAcnoKind(String hostAcnoKind) {
-		this.hostAcnoKind = hostAcnoKind;
-	}
-	public String getHostCustNo() {
-		return hostCustNo;
-	}
-	public void setHostCustNo(String hostCustNo) {
-		this.hostCustNo = hostCustNo;
-	}
-	public String getAcctNo() {
-		return acctNo;
-	}
-	public void setAcctNo(String acctNo) {
-		this.acctNo = acctNo;
-	}
-	public String getCurrency() {
-		return currency;
-	}
-	// @FormatMapping("currencyBack")
-	public void setCurrency(String currency) {
-		this.currency = currency;
-	}
-	public String getAcctName() {
-		return acctName;
-	}
-	public void setAcctName(String acctName) {
-		this.acctName = acctName;
-	}
-	public String getOpenOrgNo() {
-		return openOrgNo;
-	}
-	public void setOpenOrgNo(String openOrgNo) {
-		this.openOrgNo = openOrgNo;
-	}
-	public String getOpenDate() {
-		return openDate;
-	}
-	public void setOpenDate(String openDate) {
-		this.openDate = openDate;
-	}
-	public String getAcctStat() {
-		return acctStat;
-	}
-	public void setAcctStat(String acctStat) {
-		this.acctStat = acctStat;
-	}
-	public String getAcctType() {
-		return acctType;
-	}
-	public void setAcctType(String acctType) {
-		this.acctType = acctType;
-	}
-	public String getAcctClass() {
-		return acctClass;
-	}
-	public void setAcctClass(String acctClass) {
-		this.acctClass = acctClass;
-	}
-	public String getCashFlag() {
-		return cashFlag;
-	}
-	public void setCashFlag(String cashFlag) {
-		this.cashFlag = cashFlag;
-	}
-	public String getOverFlag() {
-		return overFlag;
-	}
-	public void setOverFlag(String overFlag) {
-		this.overFlag = overFlag;
-	}
-	public String getBankNo() {
-		return bankNo;
-	}
-	public void setBankNo(String bankNo) {
-		this.bankNo = bankNo;
-	}
-	public String getBankName() {
-		return bankName;
-	}
-	public void setBankName(String bankName) {
-		this.bankName = bankName;
-	}
-	public String getBookBal() {
-		return bookBal;
-	}
-	public void setBookBal(String bookBal) {
-		this.bookBal = bookBal;
-	}
-	public String getFrzBal() {
-		return frzBal;
-	}
-	public void setFrzBal(String frzBal) {
-		this.frzBal = frzBal;
-	}
-	public String getValBal() {
-		return valBal;
-	}
-	public void setValBal(String valBal) {
-		this.valBal = valBal;
-	}
-	public String getOverdraftLimit() {
-		return overdraftLimit;
-	}
-	public void setOverdraftLimit(String overdraftLimit) {
-		this.overdraftLimit = overdraftLimit;
-	}
-	public String getOverdraft() {
-		return overdraft;
-	}
-	public void setOverdraft(String overdraft) {
-		this.overdraft = overdraft;
-	}
 
-	public String getOpenOrgName() {
-		return openOrgName;
-	}
-
-	public void setOpenOrgName(String openOrgName) {
-		this.openOrgName = openOrgName;
-	}
 }

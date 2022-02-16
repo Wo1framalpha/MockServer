@@ -22,7 +22,7 @@ public class ApiController {
     @PostMapping("/addSingle")
     public String addSingle(@ModelAttribute DataEntity dataEntity, Model model){
         repository.save(dataEntity);
-        return "redirect:/add";
+        return "redirect:/page/add";
     }
 
     @RequestMapping("/delete")
